@@ -6,8 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <h1 id="tittle">Report Stranded Marine Life Application Plan</h1>
+        <h1 class="header" id="header-line">Report Stranded Marine Life Application Plan</h1>
+        <img class="image" src="{{ url_for('static', filename='img/whale.jpg') }}" height='400'>
+        
         <h2>Team</h2>
+        <div class="content-section">
         <p>The team that created this plan consists of five students from Oregon State University in CS 361 Software Engineering I. These students developed a plan using the waterfall software development framework based on an application proposal by the customer (another student in the program), Justin Tromp. The team members are:</p>
         <ul>
             <li>Brittany Abad</li>
@@ -16,42 +19,52 @@
             <li>Manda Jensen</li>
             <li>Kunal Patadia</li>
         </ul>
+        </div>
         
         <h2>Documents</h2>
         <p>In the links below you can download the documents that were created as part of the software development life cycle of the product during the class. The documents go from oldest document to most recent document. All documents are a compilation of work from the five team members aside from the application proposal, that document is the sole work of the customer. Customer feedback was provided throughout the design process to ensure the final result reflects the goals of the customer.</p>
         
+        <div class="content-section>
         <h3>Project Proposal<h3>
             <ul>
-                <li><a href="static/projectProposal.pdf" download>Project Proposal Document</a></li>
+                <li><a href="{{ url_for('static', filename='pdf/projectProposal.pdf') }}" download>Project Proposal Document</a></li>
             </ul>
-        
+        </div>
+                                                                                         
+        <div class="content-section>
         <h3>Requirements Definition & Specification</h3>
             <ul>
-                <li><a href="static/pdf/requirementsAssignment.pdf" download>Requirements Definition & Specification Document</a></li>
+                <li><a href="{{ url_for('static', filename='pdf/requirementsAssignment.pdf') }}" download>Requirements Definition & Specification Document</a></li>
             </ul>
+        </div>
         
+        <div class="content-section>
         <h3>Evaluation of Requirements</h3>
             <h4>Updated Requirements Definition & Specification</h4>
                 <ul>
-                <li><a href="static/pdf/evaluatingRequirementsAssignment.pdf" download>Updated Requirements Document</a></li>
+                <li><a href="{{ url_for('static', filename='pdf/evaluatingRequirementsAssignment.pdf') }}" download>Updated Requirements Document</a></li>
                 </ul>
             <h4>Paper Prototypes</h4>
                 <ul>
-                    <li><a href="static/pdf/eventPagePrototye.pdf" download>Event Page Paper Prototypes</a></li>
-                    <li><a href="static/pdf/NOAAPrototye.pdf" download>NOAA Paper Prototypes</a></li>
-                    <li><a href="static/pdf/incidentReportAndLoginPrototye.pdf" download>Incident Report and Login Paper Prototypes</a></li>
-                    <li><a href="static/pdf/volunteerProfessionalDashboardPrototype.pdf" download>Volunteer/Professional Responder Dashboard Prototypes</a></li>
+                    <li><a href="{{ url_for('static', filename='pdf/eventPagePrototye.pdf') }}" download>Event Page Paper Prototypes</a></li>
+                    <li><a href="{{ url_for('static', filename='pdf/NOAAPrototye.pdf') }}" download>NOAA Paper Prototypes</a></li>
+                    <li><a href="{{ url_for('static', filename='pdf/incidentReportAndLoginPrototye.pdf') }}" download>Incident Report and Login Paper Prototypes</a></li>
+                    <li><a href="{{ url_for('static', filename='pdf/volunteerProfessionalDashboardPrototype.pdf') }}" download>Volunteer/Professional Responder Dashboard Prototypes</a></li>
                 </ul>
-            
+        </div>
+                                                                                                                     
+        <div class="content-section>
         <h3>Architecture Development</h3>
             <ul>
-                <li><a href="static/pdf/architectureAssignment.pdf" download>Architecture Designs and Evaluation Document</a></li>
+                <li><a href="{{ url_for('static', filename='pdf/architectureAssignment.pdf') }}" download>Architecture Designs and Evaluation Document</a></li>
             </ul>
+        </div>
         
+        <div class="content-section>
         <h3>Implementation Design</h3>
             <ul>
-                <li><a href="static/pdf/designAssignment.pdf" download>Implementation Design Document</a></li>
+                <li><a href="{{ url_for('static', filename='pdf/designAssignment.pdf') }}" download>Implementation Design Document</a></li>
             </ul>
-            
+        </div>            
     </body>
 </html>
