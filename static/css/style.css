@@ -18,10 +18,20 @@ h3 {
   text-align: center;
 }
 
+.nameList {
+  text-align: center;
+}
+
+.linkList {
+  text-align: center;
+}
+
 .content-section {
   border: 1px solid rgb(100, 255, 218);
   padding: 10px;
-  
+  margin-top: 5px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 /*
   Nav Bar styling 
