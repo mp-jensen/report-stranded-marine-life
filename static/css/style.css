@@ -1,0 +1,346 @@
+/* Header styling*/
+
+.header {
+  color: rgb(230, 241, 255);
+  text-align: center;
+  font-size: 35px
+}
+
+#header-line {
+  border: 1px solid;
+  width: 400px;
+  margin: auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.content-section {
+  border: 1px solid rgb(100, 255, 218);
+}
+/*
+  Nav Bar styling 
+  Adapted from: https://www.w3schools.com/css/css_navbar.asp;
+*/
+
+nav {
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid rgb(100, 255, 218);
+  background-color: rgb(10, 25, 47);
+}
+
+nav ul li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: rgb(100, 255, 218);
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(100, 255, 218);
+  color: rgb(10, 25, 47);
+} 
+
+li a.active {
+  color: white;
+  /*background-color: rgb(4, 194, 201);*/
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/*Table Styling*/
+.db-div {
+  margin: auto;
+  width: 75%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(100, 255, 218);
+  padding: 10px;
+}
+
+.db {
+  margin: auto;
+}
+
+/*Exposing Form Field Check Boxes*/
+/*adapted from css-tricks.com/exposing-form-fields-radio-button-css*/
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scale(0.8);
+  transition: 0.5s;
+  
+}
+  
+ input[type="checkbox"]:checked ~ .reveal-if-active {
+    opacity: 1;
+    max-height: 200px;
+    padding: 10px 20px;
+    transform: scale(1);
+    overflow: visible;
+}
+
+/*Form stuff*/
+fieldset {
+  width: 50%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid rgb(100, 255, 218);
+  display:block;
+  text-align: center;
+}
+
+input {
+  display: inline-block;
+  width: 30%;
+  margin: 0 auto;
+/*  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;*/
+  padding: 5px;
+  box-shadow: border-box;
+  text-align: center
+}
+
+label {
+  margin: 0 auto;
+}
+
+input[type='submit'] {
+  display: block;
+  padding: 15px 40px;
+  background-color: rgb(10, 25, 47);
+  border: 2px solid rgb(100, 255, 218);
+  color: rgb(100, 255, 218);
+  text-decoration: none;
+  margin: 0 auto;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center
+}
+
+input[type='submit']:hover {
+  background-color: rgb(100, 255, 218);
+  color: rgb(10, 25, 47);
+}
+
+h1 {
+  text-align: center;
+}
+
+/*Buttons*/
+button {
+  text-align: center
+  font-size: 14px;
+  padding: 10px;
+  background-color: rgb(10, 25, 47);
+  border: 1px solid rgb(100, 255, 218);
+  color: rgb(100, 255, 218);
+  height: 100%;
+  width: 100%;
+}
+
+button:hover {
+  background-color: rgb(100, 255, 218);
+  color: rgb(10, 25, 47);
+}
+
+/*Table stuff*/
+table {
+  table-layout: fixed;
+  width: 85%;
+}
+
+th {
+  text-align: center;
+  border-bottom: 1px double;
+  border-color: rgb(136, 146, 176);
+}
+
+td {
+  border: 1px solid;
+  border-color: rgb(136, 146, 176);
+  text-align: center;
+}
+
+/*Carousel Style*/
+
+.carousel {
+  width: 1000px;
+  height: 500px;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+#carousel {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+#text {
+  padding: 10px;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+/*Body*/
+
+body {
+  background-color: rgb(10, 25, 47);
+  color: rgb(230, 241, 255);
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/*About Me*/
+
+.contact-container {
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-content {
+  padding-bottom: 20px;
+}
+
+.about {
+  margin: auto;
+  width: 800px;
+}
+
+#name {
+  display: inline;
+  color: rgb(100, 255, 218);
+}
+
+#headshot {
+  /*border: 1px solid;*/
+  padding: 0px;
+  padding-top: 100px;
+  width: 400px;
+  object-fit: contain;
+  float: right;
+  transform: rotate(-90deg);
+  filter: grayscale(1);
+  z-index: -1;
+}
+
+.content {
+  display: block;
+  overflow: hidden;
+}
+
+h2  {
+  text-align: center;
+}
+
+#link-container {
+  width: 250px;
+  height: 100px;
+  /*background-color: white;*/
+  margin: 0 auto;
+  text-align: center;
+}
+
+.link {
+  left-margin: auto;
+  right-margin: auto;
+  display: inline-block;
+  margin: auto;
+  width: 100px;
+}
+
+.logo {
+  object-fit: contain;
+  width: 75px;
+  height: 75px;
+  /*background-color: white;*/
+  margin: auto;
+  filter: brightness(1000%) saturate(10%) hue-rotate(40deg);
+}
+
+#github {
+  filter: brightness(1000%);
+}
+
+#send {
+  width: 10%;
+  top-padding: 25px;
+  bottom-padding: 25px;
+  text-align: center;
+  float: center;
+  font-size: 16px;
+  background-color: rgb(10, 25, 47);
+  border-color: rgb(100, 255, 218); 
+  color: rgb(100, 255, 218); 
+}
+
+#send:hover {
+  background-color: rgb(100, 255, 218);
+  color: rgb(10, 25, 47);
+}
+
+#skills-container {
+  margin: auto;
+  width: 800px;
+}
+/*List styling*/
+.col-container{
+  width: 1000px;
+  height: 300px;
+  margin: auto;
+  justify-content: center;
+  display: flex;
+}
+
+.col1, .col2 {
+  display: inline-block;
+  padding: 30px;
+  width: 30%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Scrollbox*/
+.scrollbox {
+  overflow: auto;
+  width: 800px; 
+  height: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#download {
+  display: flex;
+  justify-content: center;
+}
