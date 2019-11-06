@@ -3,12 +3,14 @@
 .header {
   color: rgb(230, 241, 255);
   text-align: center;
-  font-size: 35px
+  font-size: 45px;
 }
 
 #header-line {
   border: 1px solid;
-  width: 400px;
+  width: 600px;
+  margin-top: 5px;
+  padding: 5px;
   margin: auto;
 }
 
@@ -18,6 +20,8 @@ h3 {
 
 .content-section {
   border: 1px solid rgb(100, 255, 218);
+  padding: 10px;
+  
 }
 /*
   Nav Bar styling 
