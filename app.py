@@ -31,11 +31,15 @@ def mySchedule():
 
 @app.route('/homepage/eventList')
 def eventList():
-    return render_template('eventList')
+    return render_template('eventList.html')
 
 @app.route('/homepage/eventMap')
 def eventMap():
-    return render_template('eventMap')
+    return render_template('eventMap.html')
+
+@app.route('/homepage/settings')
+def settings():
+    return render_template('settings.html')
 
 @app.route('/logoutSuccess')
 def logoutSuccess():
