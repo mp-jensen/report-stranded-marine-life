@@ -8,10 +8,10 @@ app = Flask(__name__)
 def signIn(errMsg):
     return render_template('signIn.html',errMsg=errMsg)
 
-@app.route('/homepage',method=['POST','GET'])
+@app.route('/homepage',methods=['POST','GET'])
 def homepage():
     users = [('john.doe@noaa.org', 'password'),('volunteer@volunteer.org', '123456'),('professional@professional.org','asdfjkl')]
-    if method == 'POST':
+    if methods == 'POST':
         username = request.form['email']
         password = request.form['password']
 
