@@ -4,9 +4,9 @@ from flask import Flask, render_template, redirect, request
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/<errMsg>')
 def signIn():
-    return render_template('signIn.html')
+    return render_template('signIn.html',errMsg=errMsg)
 
 @app.route('/homepage',methods=['POST','GET'])
 def homepage():
@@ -20,7 +20,7 @@ def homepage():
                 if user[1] == password:
                     return render_template('homepage.html')
         
-        return redirect('/signIn/Invalid')
+        return redirect('/Invalid')
     return render_template('homepage.html')
 
 @app.route('/portfolio')
