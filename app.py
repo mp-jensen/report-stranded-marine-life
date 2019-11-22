@@ -3,9 +3,12 @@ from flask import Flask, render_template, redirect, request
 
 app = Flask(__name__)
 
+@app.route('/')
+def signIn():
+    return render_template('signIn.html')
 
 @app.route('/signIn/<int:error>')
-def signIn(error=0):
+def signInError(error=0):
     if error == 1:
         errMsg = "Invalid Login Information"
     return render_template('signIn.html',errMsg=errMsg)
