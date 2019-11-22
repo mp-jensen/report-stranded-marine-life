@@ -29,8 +29,8 @@
 </form>
 <!-- Default form login -->
 		    
-{% for item in errMsg %}
-	<p class="text-danger"> Invalid Login Information <\p>
+{% if errMsg %}
+	<p class="text-danger"> Invalid Login Information </p>
 {% endfor %}
 	    </div>
 </body>
