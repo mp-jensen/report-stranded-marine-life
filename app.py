@@ -8,7 +8,7 @@ app = Flask(__name__)
 def signIn(error=0):
     if error == 1:
         errMsg = "Invalid Login Information"
-    return render_template('signIn.html',errMsg=error)
+    return render_template('signIn.html',errMsg=errMsg)
 
 @app.route('/homepage',methods=['POST','GET'])
 def homepage():
