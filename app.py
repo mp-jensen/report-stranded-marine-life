@@ -18,14 +18,28 @@ def homepage():
     if request.method == 'POST':
         username = request.form['email']
         password = request.form['password']
-
         for user in users:
             if user[0] == username:
                 if user[1] == password:
-                    return render_template('homepage.html')
-        
+                    return render_template('homepage.html')        
         return redirect('/signInError')
     return render_template('homepage.html')
+
+@app.route('/homepage/mySchedule')
+def mySchedule():
+    return render_template('mySchedule.html')
+
+@app.route('/homepage/eventList')
+def eventList():
+    return render_template('eventList')
+
+@app.route('/homepage/eventMap')
+def eventMap():
+    return render_template('eventMap')
+
+@app.route('/logoutSuccess')
+def logoutSuccess():
+    return render_template('logoutSuccess.html')
 
 @app.route('/portfolio')
 def portfolio():
