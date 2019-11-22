@@ -41,7 +41,7 @@ def eventMap():
 def settings():
     return render_template('settings.html')
 
-@app.route('/homepage/logoutSuccess')
+@app.route('/logoutSuccess')
 def logoutSuccess():
     return render_template('logoutSuccess.html')
 
