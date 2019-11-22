@@ -63,9 +63,9 @@ body {
   background-color: #fff;
   background-image: url("../img/whalelight.jpg");
   height: 100%;
-   background-position: center;
+
   background-repeat: no-repeat;
-  background-size: cover;
+ 
 }
 
 .fa-1x {
