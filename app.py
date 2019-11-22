@@ -4,9 +4,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/signIn/<errMsg>')
-def signIn(errMsg):
-    return render_template('signIn.html',errMsg=errMsg)
+@app.route('/')
+def signIn():
+    return render_template('signIn.html')
 
 @app.route('/homepage',methods=['POST','GET'])
 def homepage():
