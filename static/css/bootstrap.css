@@ -61,7 +61,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
-  background-image: "../img/whalelight.jpg";
+  background-image: url("../img/whalelight.jpg");
 }
 
 
