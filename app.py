@@ -5,10 +5,27 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def signIn():
+    return render_template('signIn.html')
 
+@app.route('/homepage',methods=['POST','GET'])
+def homepage():
+    users = [('john.doe@noaa.org', 'password'),('volunteer@volunteer.org', '123456'),('professional@professional.org','asdfjkl')]
+    if methods == 'POST':
+        username = request.form['email']
+        password = request.form['password']
 
+        for user in users:
+            if user[0] == username:
+                if user[1] == password:
+                    return render_template('homepage.html')
+        
+        return redirect('/signIn/Invalid')
+    return render_template('homepage.html')
+
+@app.route('/portfolio')
+def portfolio():
+    return render_template('indexOld.html')
 
 
 
