@@ -11,7 +11,7 @@ def signIn():
 @app.route('/homepage',methods=['POST','GET'])
 def homepage():
     users = [('john.doe@noaa.org', 'password'),('volunteer@volunteer.org', '123456'),('professional@professional.org','asdfjkl')]
-    if methods == 'POST':
+    if request.method == 'POST':
         username = request.form['email']
         password = request.form['password']
 
