@@ -1,27 +1,49 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, request
 
 
 app = Flask(__name__)
-
 
 @app.route('/')
 def signIn():
     return render_template('signIn.html')
 
+@app.route('/signInError')
+def signInError():
+    errMsg = 1
+    return render_template('signIn.html',errMsg=errMsg)
+
 @app.route('/homepage',methods=['POST','GET'])
 def homepage():
     users = [('john.doe@noaa.org', 'password'),('volunteer@volunteer.org', '123456'),('professional@professional.org','asdfjkl')]
-    if methods == 'POST':
+    if request.method == 'POST':
         username = request.form['email']
         password = request.form['password']
-
         for user in users:
             if user[0] == username:
                 if user[1] == password:
-                    return render_template('homepage.html')
-        
-        return redirect('/signIn/Invalid')
+                    return render_template('homepage.html')        
+        return redirect('/signInError')
     return render_template('homepage.html')
+
+@app.route('/homepage/mySchedule')
+def mySchedule():
+    return render_template('mySchedule.html')
+
+@app.route('/homepage/eventList')
+def eventList():
+    return render_template('eventList.html')
+
+@app.route('/homepage/eventMap')
+def eventMap():
+    return render_template('eventMap.html')
+
+@app.route('/homepage/settings')
+def settings():
+    return render_template('settings.html')
+
+@app.route('/logoutSuccess')
+def logoutSuccess():
+    return render_template('logoutSuccess.html')
 
 @app.route('/portfolio')
 def portfolio():
