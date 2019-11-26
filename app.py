@@ -1,4 +1,6 @@
 from flask import Flask, render_template, redirect, request
+from time import sleep
+from random import randint, seed
 
 
 app = Flask(__name__)
@@ -43,6 +45,12 @@ def settings():
 
 @app.route('/logoutSuccess')
 def logoutSuccess():
+    random.seed()
+    randomTimeout = random.randint(1,5)
+    if randomTimeout%5 == 0:
+        time.sleep(2)
+        errMsg = 1
+        return render_template('homepage.html', errMsg=errMsg)
     return render_template('logoutSuccess.html')
 
 @app.route('/portfolio')

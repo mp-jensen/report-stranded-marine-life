@@ -30,7 +30,10 @@
   <button type="submit" onclick="window.location = '/logoutSuccess'" class="btn float-right text-light btn-gray">Log Out</button>
 	    </nav>
 	    </nav>
-	{% block content %}
+  {% block content %}
+      {% if errMsg %}
+        <p calss="text-danger">Logout Timeout - Try Again</p>
+      {% endif %}
 	    <h1 class="text-center">Homepage</h1>    
 	{% endblock %}
 	    
