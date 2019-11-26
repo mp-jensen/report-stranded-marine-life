@@ -45,10 +45,10 @@ def settings():
 
 @app.route('/logoutSuccess')
 def logoutSuccess():
-    random.seed()
-    randomTimeout = random.randint(1,5)
+    seed()
+    randomTimeout = randint(1,5)
     if randomTimeout%5 == 0:
-        time.sleep(2)
+        sleep(2)
         errMsg = 1
         return render_template('homepage.html', errMsg=errMsg)
     return render_template('logoutSuccess.html')
