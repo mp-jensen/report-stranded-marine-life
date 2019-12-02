@@ -60,10 +60,11 @@ def submittedReports():
 
 @app.route('/classify/<int:index>', methods=['POST','GET'])
 def classify(index):
+    return redirect('/homepageNOAA/submittedReports')
     if request.method == 'POST':
         if request.form['escalate']:
             reports[index][4] = 2
-            reports[index][5] = request.form['eventName']
+            reports[index][5] = request.form['escalateName']
         elif request.form['delete']:
             reports[index][4] = 1
         elif request.form['add']:
