@@ -6,6 +6,14 @@ from random import randint, seed
 app = Flask(__name__)
 
 @app.route('/')
+def welcome():
+    return render_template('welcome.html')
+
+@app.route('/fileReport')
+def fileReport():
+    return render_template('fileReport.html')
+
+@app.route('/signIn')
 def signIn():
     return render_template('signIn.html')
 
