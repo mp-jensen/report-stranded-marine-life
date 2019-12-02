@@ -18,11 +18,16 @@
   <div class="card-footer">
     <button class="btn btn-info" type="submit">Escalate</button>
      <button class="btn btn-warning" type="submit">Delete</button>
-   
+   {% if item.4 is equalto 0 %}
+     {% for item in data %}
+     {% if item.4 is equalto 2 %}
      <button class="btn btn-green dropdown-toggle" data-toggle="dropdown" type="submit">Add to Existing</button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#"></a>
+        <a class="dropdown-item" href="#">{{item.5}}</a>
   </div>
+     {% endif %}
+     {% endfor %}
+     {% endif %}
     
       </div>
 
