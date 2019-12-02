@@ -1,3 +1,13 @@
+<!doctype html>
+<html lang="en">
+    <head>
+ <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+ </head>
+    <body>
+
+
 <div class="container-fluid p-5">
 
    {% for item in data %}
@@ -6,7 +16,10 @@
 
 <div class="card">
   <div class="card-header">Incident Report</div>
-  <div class="card-body">Information
+    {% if item.4 is equalto 2 %}
+  <div class="card-body">{{ item.5}}
+      {% if item.4 is equalto 0 %}
+       <div class="card-body">Information
     <ul class="list-group">
   <li class="list-group-item">Name:{{item.0}}</li>
   <li class="list-group-item">Location:{{item.1}}</li>
@@ -34,3 +47,5 @@
       {% endfor %}
 
   </div>
+   </body>
+   </html>
