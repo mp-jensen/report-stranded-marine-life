@@ -11,9 +11,9 @@
 <div class="container-fluid p-5">
 
    {% for item in data %}
-    
+    {% if item.4 is equalto 0 %}
  
-
+<form action="/classify/{{item.6}}" method="post">
 <div class="card">
   <div class="card-header">{{item.5}}</div>
   
@@ -27,23 +27,24 @@
 </ul>
   </div>
   <div class="card-footer">
-    <button class="btn btn-info" type="submit">Escalate</button>
-     <button class="btn btn-warning" type="submit">Delete</button>
-   {% if item.4 is equalto 0 %}
-     {% for item in data %}
+	
+    <button class="btn btn-info" name="escalate" type="submit">Escalate</button>
+     <button class="btn btn-warning" name="delete" type="submit">Delete</button>
+    
+     <button class="btn btn-green dropdown-toggle" name="add" data-toggle="dropdown" type="submit">Add to Existing</button>
+	   {% for item in data %}
      {% if item.4 is equalto 2 %}
-     <button class="btn btn-green dropdown-toggle" data-toggle="dropdown" type="submit">Add to Existing</button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#">{{item.5}}</a>
   </div>
      {% endif %}
      {% endfor %}
-     {% endif %}
+    
     
       </div>
-
+	 {% endif %}
       {% endfor %}
-
+</form>
   </div>
    </body>
    </html>
