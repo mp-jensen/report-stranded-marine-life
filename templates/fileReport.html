@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+ <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+ </head>
+    <body>
+   
+    <div class="container-fluid pt-5 pb-5 col-8">
+	    <h1 class="text-center">Incident Report Form</h1>
+    <form class="form-group" method="post" action="/reportSuccess">
+    <input type="text" class="form-control mb-2" name="name" placeholder="Name">
+    <input type="text" class="form-control mb-3" name="location" placeholder="Location">
+    <input type="text" class="form-control mb-3" name="type" placeholder="Animal Status">
+    <textarea rows="5" class="form-control mb-3" name="description" placeholder="Description"></textarea>
+	    <button type="submit" class="btn align-center btn-info my-4">Submit Report</button></form>
+    </div>
+    </body>
+	    </html>
