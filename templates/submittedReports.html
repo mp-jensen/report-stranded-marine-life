@@ -1,5 +1,6 @@
 <div class="container-fluid p-5">
-  {% for item in data %}
+
+   {% for item in data %}
     {% if {{item.4}}==0 %}
  
 
@@ -22,9 +23,9 @@
       <div class="dropdown-menu">
         <a class="dropdown-item" href="#"></a>
   </div>
-    {% endif %}
-      {% endfor %}
+    
       </div>
- 
+ {% endif %}
+      {% endfor %}
 
   </div>
