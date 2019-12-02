@@ -60,6 +60,7 @@ def submittedReports():
 
 @app.route('/classify/<int:index>', methods=['POST','GET'])
 def classify(index):
+    print(request.form)
     return redirect('/homepageNOAA/submittedReports')
     if request.method == 'POST':
         if request.form['escalate']:
