@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, request
 from time import sleep
 from random import randint, seed
 
+reports = [('Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0), ('Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 1), ('Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0)]
+#last integer in reports 0 = unprocessed, 1 = processed
 
 app = Flask(__name__)
 
@@ -13,8 +15,11 @@ def welcome():
 def fileReport():
     return render_template('fileReport.html')
 
-@app.route('/reportSuccess')
+@app.route('/reportSuccess',methods=['POST','GET'])
 def reportSuccess():
+    if request.method == 'POST':
+        report = (request.form['name'], request.form['location'], request.form['location'], request.form['details'], 0)
+        reports.append(report)
     return render_template('reportSuccess.html')
 
 @app.route('/signIn')
