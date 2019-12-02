@@ -40,9 +40,15 @@ def homepage(errMsg=0):
         for user in users:
             if user[0] == username:
                 if user[1] == password:
+                    if "@noaa.org" in user[0]:
+                        return redirect('/homepageNOAA')
                     return render_template('homepage.html')        
         return redirect('/signInError')
     return render_template('homepage.html', errMsg=errMsg)
+
+@app.route('/homepageNOAA')
+def homepageNOAA():
+    return render_template('homepageNOAA.html')
 
 @app.route('/homepage/mySchedule')
 def mySchedule():
