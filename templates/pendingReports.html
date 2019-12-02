@@ -28,17 +28,19 @@
   </div>
   <div class="card-footer">
 	
-    <button class="btn btn-info" name="escalate" type="submit">Escalate</button>
+    <input type="text" name="escalateName" class="form-control my-2"<button class="btn btn-info" name="escalate" type="submit">Escalate</button>>
      <button class="btn btn-warning" name="delete" type="submit">Delete</button>
     
      <button class="btn btn-green dropdown-toggle show active" name="add" data-toggle="dropdown" type="submit">Add to Existing</button>
-	   {% for item in data %}
-     {% if item.4 is equalto 2 %}
+	   
       <div class="dropdown-menu">
-        <a class="dropdown-item show active" href="#">{{item.5}}</a>
-  </div>
-     {% endif %}
+	      {% for item in data %}
+     {% if item.4 is equalto 2 %}
+        <a class="dropdown-item show active" value="{{item.5}}" href="#">{{item.5}}</a>
+ {% endif %}
      {% endfor %}
+	  </div>
+    
     
     
       </div>
