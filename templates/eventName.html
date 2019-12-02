@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+    <head>
+ <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+ </head>
+    <body>
+
+  <div class="container-fluid justify-content-center">
+    <form action="/addName" method="post" class="form-control">
+      <input type="text" class="form-control my-2" name="eventName">
+      <button type="submit" class="btn btn-info">Submit </button>
+      </form>
+      </div>
+   </body>
+   </html>
