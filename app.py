@@ -15,7 +15,7 @@ def signInError():
     return render_template('signIn.html',errMsg=errMsg)
 
 @app.route('/homepage',methods=['POST','GET'])
-def homepage():
+def homepage(errMsg=0):
     users = [('john.doe@noaa.org', 'password'),('volunteer@volunteer.org', '123456'),('professional@professional.org','asdfjkl')]
     if request.method == 'POST':
         username = request.form['email']
@@ -25,7 +25,7 @@ def homepage():
                 if user[1] == password:
                     return render_template('homepage.html')        
         return redirect('/signInError')
-    return render_template('homepage.html')
+    return render_template('homepage.html', errMsg=errMsg)
 
 @app.route('/homepage/mySchedule')
 def mySchedule():
@@ -50,7 +50,7 @@ def logoutSuccess():
     if randomTimeout%5 == 0:
         sleep(2)
         errMsg = 1
-        return render_template('homepage.html', errMsg=errMsg)
+        homepage(errMsg)
     return render_template('logoutSuccess.html')
 
 @app.route('/portfolio')
