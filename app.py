@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request
 from time import sleep
 from random import randint, seed
 
-reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, ''], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray'], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '']]
+reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
 #last integer in reports 0 = unprocessed, 1 = archived, 2 = in a new event, 3 = in an existing event, 4 = event completed]
 
 app = Flask(__name__)
@@ -18,7 +18,7 @@ def fileReport():
 @app.route('/reportSuccess',methods=['POST','GET'])
 def reportSuccess():
     if request.method == 'POST':
-        report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '']
+        report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '',len(reports)-1]
         reports.append(report)
     return render_template('reportSuccess.html')
 
