@@ -31,11 +31,11 @@
     <button class="btn btn-info" name="escalate" type="submit">Escalate</button>
      <button class="btn btn-warning" name="delete" type="submit">Delete</button>
     
-     <button class="btn btn-green dropdown-toggle" name="add" data-toggle="dropdown" type="submit">Add to Existing</button>
+     <button class="btn btn-green dropdown-toggle show active" name="add" data-toggle="dropdown" type="submit">Add to Existing</button>
 	   {% for item in data %}
      {% if item.4 is equalto 2 %}
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">{{item.5}}</a>
+        <a class="dropdown-item show active" href="#">{{item.5}}</a>
   </div>
      {% endif %}
      {% endfor %}
