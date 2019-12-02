@@ -1,22 +1,33 @@
 <div class="container-fluid p-5">
+  {% for item in data %}
+    {% if {{item.4}}==0 %}
+ 
+
 <div class="card">
   <div class="card-header">Incident Report</div>
   <div class="card-body">Information
     <ul class="list-group">
-  <li class="list-group-item">Name:</li>
-  <li class="list-group-item">Location:</li>
-  <li class="list-group-item">Type:</li>
-  <li class="list-group-item">Description:</li>
+  <li class="list-group-item">Name:{{item.0}}</li>
+  <li class="list-group-item">Location:{{item.1}}</li>
+  <li class="list-group-item">Type:{{item.2}}</li>
+  <li class="list-group-item">Description:{{item.3}}</li>
+       {% endif %}
+      {% endfor %}
 </ul>
   </div>
   <div class="card-footer">
     <button class="btn btn-info" type="submit">Escalate</button>
      <button class="btn btn-warning" type="submit">Delete</button>
+     
      <button class="btn btn-green dropdown-toggle" data-toggle="dropdown" type="submit">Add to Existing</button>
+    {% for item in data %}
+    {% if {{item.4}}==2 %}
       <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Link 1</a>
-    <a class="dropdown-item" href="#">Link 2</a>
-    <a class="dropdown-item" href="#">Link 3</a>
+        <a class="dropdown-item" href="#">{{item.5}}</a>
   </div>
+    {% endif %}
+      {% endfor %}
       </div>
-</div>
+ 
+
+  </div>
