@@ -13,6 +13,10 @@ def welcome():
 def fileReport():
     return render_template('fileReport.html')
 
+@app.route('/reportSuccess')
+def reportSuccess():
+    return render_template('reportSuccess.html')
+
 @app.route('/signIn')
 def signIn():
     return render_template('signIn.html')
