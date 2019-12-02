@@ -50,9 +50,27 @@ def homepage(errMsg=0):
 def homepageNOAA():
     return render_template('homepageNOAA.html')
 
-@app.route('/homepageNOAA/submittedReports', methods=['POST','GET'])
+@app.route('/homepageNOAA/pendingReports')
+def pendingReports():
+    return render_template('pendingReports.html', data=reports)
+
+@app.route('/homepageNOAA/submittedReports')
 def submittedReports():
     return render_template('submittedReports.html', data=reports)
+
+@app.route('/classify/<int:index>', methods=['POST','GET'])
+def classify(index):
+    if request.method == 'POST':
+        if request.form['escalate']:
+            reports[index][4] = 2
+            reports[index][5] = request.form['eventName']
+        elif request.form['delete']:
+            reports[index][4] = 1
+        elif request.form['add']:
+            reports[index][4] = 3
+            reports[index][5] = request.form['add']
+    return redirect('/homepageNOAA/submittedReports')
+
 
 @app.route('/homepage/mySchedule')
 def mySchedule():
