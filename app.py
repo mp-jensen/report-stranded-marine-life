@@ -6,7 +6,7 @@ import datetime
 reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
 #last integer in reports 0 = unprocessed, 1 = archived, 2 = in a new event, 3 = in an existing event, 4 = event completed]
 
-events = [[1,'Southport Bached Whale', 18,[('Erik Rick',datetime.datetime.now(),'Arrived at scene, saw two beached whales, called for professional help')]]]
+events = [[0,'Southport Bached Whale', 18,[('Erik Rick',datetime.datetime.now(),'Arrived at scene, saw two beached whales, called for professional help')]]]
 
 app = Flask(__name__)
 
@@ -79,8 +79,8 @@ def classify(index):
 def messageBoard():
     if request.method == 'POST':
         newMessage = (request.form['person'],datetime.datetime.now(),request.form['comment'])
-        events[request.form['eventIndex']][3].insert(0,newMessage)
-        event = events[request.form['eventIndex']]
+        events[int(request.form['eventIndex'])][3].insert(0,newMessage)
+        event = events[int(request.form['eventIndex'])]
         return render_template('messageBoard.html',event = event)
     event = events[0]
     return render_template('messageBoard.html', event = event)
