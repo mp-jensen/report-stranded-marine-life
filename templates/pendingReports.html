@@ -27,9 +27,10 @@
 	<div class="form-inline">
     <input type="text" name="escalateName" value="" placeholder="Give Event a Name" class="form-control my-2 col-3"><button class="btn btn-info" name="escalate" type="submit">Escalate</button>
 	<button class="btn btn-warning" name="delete" value={{item.6}} type="submit">Delete</button>
-    
+	  </div>
+	  <div class="form-inline">
      <select class="btn btn-green dropdown-toggle" data-toggle="dropdown">
-	     <option class="dropdown-item">Add to Existing</option>
+	     <option class="dropdown-item">Choose Event</option>
       
 	      {% for item in data %}
      {% if item.4 is equalto 2 %}
@@ -37,6 +38,7 @@
  {% endif %}
      {% endfor %}
 		</select>
+		<input  type="submit" name="add">
 		</div>
 		
     
