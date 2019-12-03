@@ -20,10 +20,10 @@ def fileReport():
 
 @app.route('/reportSuccess',methods=['POST','GET'])
 def reportSuccess():
-#    global reports
-#    if request.method == 'POST':
-#        report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '',len(reports)]
-#        reports.append(report)
+    global reports
+    if request.method == 'POST':
+        report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '',len(reports)]
+        reports.append(report)
     return render_template('reportSuccess.html')
 
 @app.route('/signIn')
@@ -56,7 +56,7 @@ def homepageNOAA():
 
 @app.route('/homepageNOAA/pendingReports')
 def pendingReports():
-    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
+#    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
     return render_template('pendingReports.html', data=reports)
 
 @app.route('/homepageNOAA/submittedReports')
@@ -65,7 +65,8 @@ def submittedReports():
 
 @app.route('/classify/<int:index>', methods=['POST','GET'])
 def classify(index):
-    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
+    global reports
+#    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
     print(request.form)
     print(reports)
     if request.method == 'POST':
@@ -78,8 +79,8 @@ def classify(index):
             reports[index][4] = 3
             reports[index][5] = request.form['add']
         print(reports)
-    return render_template('submittedReports.html', data=reports)
-#    return redirect('/homepageNOAA/submittedReports')
+#    return render_template('submittedReports.html', data=reports)
+    return redirect('/homepageNOAA/submittedReports')
 
 @app.route('/messageBoard', methods=['POST','GET'])
 def messageBoard():
