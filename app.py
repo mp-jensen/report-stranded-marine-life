@@ -3,7 +3,7 @@ from time import sleep
 from random import randint, seed
 import datetime
 
-reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringray on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2], ['Lexi Alexander', 'Oak Street Beach', 'Asian Carp', 'Two (I think they are asian carp) fish on the lakefront path, kids are poking them, it looks like they are dead', 2, 'Oak Street Carp', 3], ['Nick Jonas', 'Oak Street Beach', 'Fish on the path, blocking human traffic. They look dead', 0, '', 4]]
+reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringray on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2], ['Lexi Alexander', 'Oak Street Beach', 'Asian Carp', 'Two (I think they are asian carp) fish on the lakefront path, kids are poking them, it looks like they are dead', 2, 'Oak Street Carp', 3], ['Nick Jonas', 'Oak Street Beach', 'Asian Carp','Fish on the path, blocking human traffic. They look dead', 0, '', 4]]
 #last integer in reports 0 = unprocessed, 1 = archived, 2 = in a new event, 3 = in an existing event, 4 = event completed]
 
 events = [[0,'Southport Bached Whale', 18,[('Erik Rick',datetime.datetime.now(),'Arrived at scene, saw two beached whales, called for professional help')]]]
@@ -56,7 +56,7 @@ def homepageNOAA():
 
 @app.route('/homepageNOAA/pendingReports')
 def pendingReports():
-    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringray on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2], ['Lexi Alexander', 'Oak Street Beach', 'Asian Carp', 'Two (I think they are asian carp) fish on the lakefront path, kids are poking them, it looks like they are dead', 2, 'Oak Street Carp', 3], ['Nick Jonas', 'Oak Street Beach', 'Fish on the path, blocking human traffic. They look dead', 0, '', 4]]
+    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringray on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2], ['Lexi Alexander', 'Oak Street Beach', 'Asian Carp', 'Two (I think they are asian carp) fish on the lakefront path, kids are poking them, it looks like they are dead', 2, 'Oak Street Carp', 3], ['Nick Jonas', 'Oak Street Beach', 'Asian Carp','Fish on the path, blocking human traffic. They look dead', 0, '', 4]]
     return render_template('pendingReports.html', data=reports)
 
 @app.route('/homepageNOAA/submittedReports')
@@ -65,7 +65,7 @@ def submittedReports():
 
 @app.route('/classify/<int:index>', methods=['POST','GET'])
 def classify(index):
-    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringray on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2], ['Lexi Alexander', 'Oak Street Beach', 'Asian Carp', 'Two (I think they are asian carp) fish on the lakefront path, kids are poking them, it looks like they are dead', 2, 'Oak Street Carp', 3], ['Nick Jonas', 'Oak Street Beach', 'Fish on the path, blocking human traffic. They look dead', 0, '', 4]]
+    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringray on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2], ['Lexi Alexander', 'Oak Street Beach', 'Asian Carp', 'Two (I think they are asian carp) fish on the lakefront path, kids are poking them, it looks like they are dead', 2, 'Oak Street Carp', 3], ['Nick Jonas', 'Oak Street Beach', 'Asian Carp','Fish on the path, blocking human traffic. They look dead', 0, '', 4]]
     print(request.form)
     print(reports)
     if request.method == 'POST':
