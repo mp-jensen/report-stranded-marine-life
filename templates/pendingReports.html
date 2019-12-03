@@ -28,12 +28,12 @@
     <input type="text" name="escalateName" value="" placeholder="Give Event a Name" class="form-control my-2 col-3"><button class="btn btn-info" name="escalate" type="submit">Escalate</button>
 	<button class="btn btn-warning" name="delete" value={{item.6}} type="submit">Delete</button>
     
-     <button class="btn btn-green dropdown-toggle show active" name="add" data-toggle="dropdown" type="submit">Add to Existing</button>
+     <button class="btn btn-green dropdown-toggle show active" name="add" data-toggle="dropdown">Add to Existing</button>
 	   
       <div class="dropdown-menu">
 	      {% for item in data %}
      {% if item.4 is equalto 2 %}
-        <a class="dropdown-item show active" value="{{item.5}}">{{item.5}}</a>
+        <a class="dropdown-item" type="submit" value="{{item.5}}">{{item.5}}</a>
  {% endif %}
      {% endfor %}
 	  </div>
