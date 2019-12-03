@@ -78,6 +78,7 @@ def classify(index):
 @app.route('/messageBoard', methods=['POST','GET'])
 def messageBoard():
     if request.method == 'POST':
+        print(request.form)
         newMessage = (request.form['person'],datetime.datetime.now(),request.form['comment'])
         events[int(request.form['eventIndex'])][3].insert(0,newMessage)
         event = events[int(request.form['eventIndex'])]
