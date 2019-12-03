@@ -21,6 +21,7 @@ def fileReport():
 @app.route('/reportSuccess',methods=['POST','GET'])
 def reportSuccess():
     if request.method == 'POST':
+        global reports
         report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '',len(reports)-1]
         reports.append(report)
     return render_template('reportSuccess.html')
@@ -65,6 +66,7 @@ def submittedReports():
 def classify(index):
     print(request.form)
     if request.method == 'POST':
+        global reports
         if 'escalate' in request.form:
             reports[index][4] = 2
             reports[index][5] = request.form['escalateName']
@@ -78,6 +80,7 @@ def classify(index):
 
 @app.route('/messageBoard', methods=['POST','GET'])
 def messageBoard():
+    global events
     if request.method == 'POST':
         print(request.form)
         newMessage = (request.form['person'],datetime.datetime.now(),request.form['comment'])
