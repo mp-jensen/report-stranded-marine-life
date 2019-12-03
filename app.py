@@ -20,10 +20,10 @@ def fileReport():
 
 @app.route('/reportSuccess',methods=['POST','GET'])
 def reportSuccess():
-    global reports
-    if request.method == 'POST':
-        report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '',len(reports)]
-        reports.append(report)
+#    global reports
+#    if request.method == 'POST':
+#        report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '',len(reports)]
+#        reports.append(report)
     return render_template('reportSuccess.html')
 
 @app.route('/signIn')
