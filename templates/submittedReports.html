@@ -9,7 +9,13 @@
     {% if item.4 is not equalto 0 %}
 
 <div class="card">
-  <div class="card-header">{{item.5}}</div>
+  <div class="card-header">{{item.5}}
+	  {% if item.4 is equalto 2 %}
+  		Status: Escalated
+	{% endif %}
+	{% if item.4 is equalto 1 %}
+	   Status: Deleted  
+	 {% endif %}</div>
   
        <div class="card-body">
     <ul class="list-group">
