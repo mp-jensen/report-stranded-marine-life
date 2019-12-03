@@ -11,7 +11,7 @@
 <div class="container-fluid p-5">
 
    {% for item in data %}
-    {% if item.4 is equalto 2 %}
+    
  
 <form action="/classify/{{item.6}}" method="post">
 <div class="card">
@@ -26,9 +26,12 @@
      
 </ul>
   </div>
-  <div class="card-footer">Escalated
-	
-      </div>
+	{% if item.4 is equalto 2 %}
+  <div class="card-footer">Escalated </div>
+	{% endif %}
+	{% if item.4 is equalto 1 %}
+	   <div class="card-footer">Deleted </div>
+     
 	 {% endif %}
       {% endfor %}
 </form>
