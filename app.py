@@ -3,7 +3,7 @@ from time import sleep
 from random import randint, seed
 import datetime
 
-reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
+#reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
 #last integer in reports 0 = unprocessed, 1 = archived, 2 = in a new event, 3 = in an existing event, 4 = event completed]
 
 events = [[0,'Southport Bached Whale', 18,[('Erik Rick',datetime.datetime.now(),'Arrived at scene, saw two beached whales, called for professional help')]]]
@@ -56,17 +56,16 @@ def homepageNOAA():
 
 @app.route('/homepageNOAA/pendingReports')
 def pendingReports():
-    global reports
+    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
     return render_template('pendingReports.html', data=reports)
 
 @app.route('/homepageNOAA/submittedReports')
 def submittedReports():
-    global reports
     return render_template('submittedReports.html', data=reports)
 
 @app.route('/classify/<int:index>', methods=['POST','GET'])
 def classify(index):
-    global reports
+    reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
     print(request.form)
     print(reports)
     if request.method == 'POST':
