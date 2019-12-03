@@ -21,9 +21,8 @@ def fileReport():
 @app.route('/reportSuccess',methods=['POST','GET'])
 def reportSuccess():
     if request.method == 'POST':
-        global reports
-        report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '',len(reports)-1]
-        reports.append(report)
+        report = [request.form['name'], request.form['location'], request.form['type'], request.form['description'], 0, '',len(global reports)-1]
+        global reports.append(report)
     return render_template('reportSuccess.html')
 
 @app.route('/signIn')
@@ -65,29 +64,29 @@ def submittedReports():
 @app.route('/classify/<int:index>', methods=['POST','GET'])
 def classify(index):
     print(request.form)
+    print(global reports)
     if request.method == 'POST':
         global reports
         if 'escalate' in request.form:
-            reports[index][4] = 2
-            reports[index][5] = request.form['escalateName']
+            global reports[index][4] = 2
+            global reports[index][5] = request.form['escalateName']
         elif 'delete' in request.form:
-            reports[index][4] = 1
+            global reports[index][4] = 1
         elif 'add' in request.form:
-            reports[index][4] = 3
-            reports[index][5] = request.form['add']
-        print(reports)
+            global reports[index][4] = 3
+            global reports[index][5] = request.form['add']
+        print(global reports)
     return redirect('/homepageNOAA/submittedReports')
 
 @app.route('/messageBoard', methods=['POST','GET'])
 def messageBoard():
-    global events
     if request.method == 'POST':
         print(request.form)
         newMessage = (request.form['person'],datetime.datetime.now(),request.form['comment'])
-        events[int(request.form['eventIndex'])][3].insert(0,newMessage)
-        event = events[int(request.form['eventIndex'])]
+        global events[int(request.form['eventIndex'])][3].insert(0,newMessage)
+        event = global events[int(request.form['eventIndex'])]
         return render_template('messageBoard.html',event = event)
-    event = events[0]
+    event = global events[0]
     return render_template('messageBoard.html', event = event)
     
 @app.route('/homepage/mySchedule')
