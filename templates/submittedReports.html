@@ -9,13 +9,17 @@
     {% if item.4 is not equalto 0 %}
 
 <div class="card">
-  <div class="card-header">{{item.5}}
+  <div class="card-header">{{item.5}}<br>
 	  {% if item.4 is equalto 2 %}
   		Status: Escalated
 	{% endif %}
 	{% if item.4 is equalto 1 %}
 	   Status: Deleted  
-	 {% endif %}</div>
+	 {% endif %}
+	{% if item.4 is equalto 3 %}
+		Status: Added to {{item.5}}
+	{% endif %}
+	</div>
   
        <div class="card-body">
     <ul class="list-group">
@@ -26,13 +30,6 @@
      
 </ul>
   </div>
-	{% if item.4 is equalto 2 %}
-  <div class="card-footer">Escalated </div>
-	{% endif %}
-	{% if item.4 is equalto 1 %}
-	   <div class="card-footer">Deleted </div>
-  
-	 {% endif %}
 	 {% endif %}
       {% endfor %}
 
