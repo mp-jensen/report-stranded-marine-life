@@ -1,0 +1,27 @@
+{% extends "eventHomepage.html" %}
+
+{% block eventName %}{{event.1}}{% endblock %}
+
+{% block content %}
+
+    <h1 class="text-center">Message Board</h1>   
+    
+    <div class='comment-section'>
+            <form action='/messageBoard' method='POST' name='{{event.2}}'>Submit a new message:<br>
+                <input type='hidden' name='eventIndex' value='{{event.0}}'>
+                <label>Your Name: </label><input type='text' name='person' required><br>
+                <label>Comment: </label><textarea maxlength=500 required='true' rows=3 cols='40' name='comment'></textarea><br>
+                <input type='submit' name='Submit'>
+            </form>
+    {% for item in event.3 %}
+
+    <div class='comment-grouping'>
+        <h4 class="comment-person">{{item.0}}</h4>
+        <p class="comment-date">{{item.1}}</p>
+        <p class="comment-text">{{item.2}}</p>
+    </div>
+    
+    {% endfor %}
+    </div>
+    
+  {% endblock %}

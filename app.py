@@ -1,9 +1,12 @@
 from flask import Flask, render_template, redirect, request
 from time import sleep
 from random import randint, seed
+import datetime
 
 reports = [['Brittany B', 'Southport Beach', 'Whale', 'Beached whale, 10 feet from the current water level', 0, '', 0], ['Chris F', 'Eastport Beach', 'Stingray', 'Stringrapy on the shore, one person has been stung', 2, 'Eastport Stingray',1], ['Manda Mandalay', 'Northport Beach', 'Seal', 'Family of seals, people are getting close to the animals', 0, '',2]]
 #last integer in reports 0 = unprocessed, 1 = archived, 2 = in a new event, 3 = in an existing event, 4 = event completed]
+
+events = [[1,'Southport Bached Whale', 18,[('Erik Rick',datetime.datetime.now(),'Arrived at scene, saw two beached whales, called for professional help')]]]
 
 app = Flask(__name__)
 
@@ -72,7 +75,16 @@ def classify(index):
             reports[index][5] = request.form['add']
     return redirect('/homepageNOAA/submittedReports')
 
-
+@app.route('/messageBoard', methods=['POST','GET'])
+def messageBoard():
+    if request.method == 'POST':
+        newMessage = (request.form['person'],datetime.datetime.now(),request.form['comment'])
+        events[request.form['eventIndex']][3].insert(0,newMessage)
+        event = events[request.form['eventIndex']]
+        return render_template('messageBoard.html',event = event)
+    event = events[0]
+    return render_template('messageBoard.html', event = event)
+    
 @app.route('/homepage/mySchedule')
 def mySchedule():
     return render_template('mySchedule.html')

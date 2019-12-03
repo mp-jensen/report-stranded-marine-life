@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+    <head>
+ <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+ </head>
+    <body>
+<!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+<li class="nav-item">
+      <a class="nav-link disabled text-light" href="#"><h4>Report Stranded Marine Life EVENT - {% block eventName %}{% endblock %}</h4></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="#">Event Home</a>
+      </li>
+    <li class="nav-item active">
+      <a class="nav-link active" href="#">Location</a>
+    </li>
+     <li class="nav-item active">
+      <a class="nav-link active" href="#">Calendar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Forms</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="/messageBoard">Message Board</a>
+      </li>
+  </ul>
+	<nav class="justify-content-right">
+		
+  <button type="submit" onclick="window.location = '/logoutSuccess'" class="btn float-right text-light btn-gray">Log Out</button>
+	    </nav>
+	    </nav>
+  {% block content %}
+      {% if errMsg %}
+        <p calss="text-danger">Logout Timeout - Try Again</p>
+      {% endif %}
+	    <h1 class="text-center">Homepage</h1>    
+	{% endblock %}
+	    
+</body>
+</html>
