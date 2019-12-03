@@ -73,6 +73,7 @@ def classify(index):
         elif 'add' in request.form:
             reports[index][4] = 3
             reports[index][5] = request.form['add']
+        print(reports)
     return redirect('/homepageNOAA/submittedReports')
 
 @app.route('/messageBoard', methods=['POST','GET'])
